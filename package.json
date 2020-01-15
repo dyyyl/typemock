@@ -2,11 +2,20 @@
   "name": "typemock",
   "version": "0.1.0",
   "description": "Mock  data objects shaped with your TypeScript interfaces",
-  "main": "src/index.ts",
+  "main": "./bin/index.js",
+  "bin": {
+    "typemock": "./bin/index.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "types": "bin/index.d.ts",
   "repository": "https://github.com/dyyyl/typemock",
-  "author": "Dyl Lavoie",
+  "author": "Dyl Lavoie <hey@dyyyl.rocks>",
   "license": "MIT",
   "dependencies": {
+    "commander": "^4.1.0",
     "faker": "^4.1.0",
     "ts-jest": "^24.3.0"
   },
@@ -23,13 +32,13 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.2",
     "jest": "^24.9.0",
-    "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.4"
   },
   "scripts": {
-    "start": "nodemon",
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
     "test": "jest --watch"
   },
   "jest": {
