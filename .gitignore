@@ -33,3 +33,5 @@ Temporary Items
 *.code-workspace
 
 node_modules/
+dist
+*.tgz
