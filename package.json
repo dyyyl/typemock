@@ -1,7 +1,10 @@
 {
   "name": "typemock",
   "version": "0.1.0",
+  "author": "Dyl Lavoie <hey@dyyyl.rocks>",
   "description": "Mock  data objects shaped with your TypeScript interfaces",
+  "repository": "https://github.com/dyyyl/typemock",
+  "license": "MIT",
   "main": "./bin/index.js",
   "bin": {
     "typemock": "./bin/index.js"
@@ -11,13 +14,15 @@
     "dist"
   ],
   "types": "bin/index.d.ts",
-  "repository": "https://github.com/dyyyl/typemock",
-  "author": "Dyl Lavoie <hey@dyyyl.rocks>",
-  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "test": "jest --watch",
+    "package": "yarn build && yarn pack"
+  },
   "dependencies": {
     "commander": "^4.1.0",
-    "faker": "^4.1.0",
-    "ts-jest": "^24.3.0"
+    "faker": "^4.1.0"
   },
   "devDependencies": {
     "@types/faker": "^4.1.8",
@@ -33,27 +38,8 @@
     "eslint-plugin-prettier": "^3.1.2",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
+    "ts-jest": "^24.3.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.4"
-  },
-  "scripts": {
-    "start": "ts-node src/index.ts",
-    "build": "tsc",
-    "test": "jest --watch"
-  },
-  "jest": {
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.json"
-      }
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "./node_modules/ts-jest"
-    },
-    "testEnvironment": "node"
   }
 }
